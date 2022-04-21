@@ -153,9 +153,9 @@ prepare_pve_host
 fn_create_template $TEMPLATE_ID
 
 # @HOME
-create_vm_from_snippet "$TEMPLATE_ID" "201" "192.168.144.201" "192.168.144.1" "k3s-master1"
-create_vm_from_snippet "$TEMPLATE_ID" "202" "192.168.144.202" "192.168.144.1" "k3s-node2"
-create_vm_from_snippet "$TEMPLATE_ID" "203" "192.168.144.203" "192.168.144.1" "k3s-node3"
+create_vm_from_snippet "$TEMPLATE_ID" "201" "192.168.144.201" "192.168.144.1" "node1"
+create_vm_from_snippet "$TEMPLATE_ID" "202" "192.168.144.202" "192.168.144.1" "node2"
+create_vm_from_snippet "$TEMPLATE_ID" "203" "192.168.144.203" "192.168.144.1" "node3"
 
 
 ###### Install k3s on node
