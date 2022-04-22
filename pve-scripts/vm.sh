@@ -158,20 +158,6 @@ create_vm_from_snippet "$TEMPLATE_ID" "202" "192.168.144.202" "192.168.144.1" "n
 create_vm_from_snippet "$TEMPLATE_ID" "203" "192.168.144.203" "192.168.144.1" "node3"
 
 
-###### Install k3s on node
-
-fn_master () {
-    curl -sfL https://get.k3s.io | sh -
-    sudo cat /var/lib/rancher/k3s/server/node-token
-    sudo cp /etc/rancher/k3s/k3s.yaml /tmp
-    sudo chmod 755 /tmp/k3s.yaml
-}
-
-fn_slave () {
-    curl -sfL https://get.k3s.io | K3S_URL=https://192.168.144.201:6443 K3S_TOKEN=XXX sh -
-}
-
-
 fn_merge_kube_config (){
   cp config config.back
   KUBECONFIG=~/.kube/config:~/.kube/k3s.yaml kubectl config view --flatten > /tmp/config 
