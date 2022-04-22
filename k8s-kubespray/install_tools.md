@@ -34,6 +34,12 @@ CONFIG_FILE=inventory/mypvecluster/hosts.yaml python3 contrib/inventory_builder/
 # Review and change parameters under inventory/mycluster/group_vars
 cat inventory/mypvecluster/group_vars/all/all.yml
 cat inventory/mypvecluster/group_vars/k8s_cluster/k8s-cluster.yml
+
+# If needed enable nginx ingress in inventory/mypvecluster/group_vars/k8s_cluster/addons.yml
+ingress_nginx_enabled: true
+
+# If needed enable k8s dashboard in inventory/mypvecluster/group_vars/k8s_cluster/addons.yml
+dashboard_enabled: true
 ```
 
 # Deploy Kubespray with Ansible Playbook
@@ -41,3 +47,14 @@ cat inventory/mypvecluster/group_vars/k8s_cluster/k8s-cluster.yml
 ``` bash
 ansible-playbook -i inventory/mypvecluster/hosts.yaml  --become --become-user=root cluster.yml
 ```
+
+
+# Get the config from a master
+
+``` bash
+cat /etc/kubernetes/admin.conf
+```
+
+Edit the server url to match a master ip.
+
+
