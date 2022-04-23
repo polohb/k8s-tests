@@ -68,5 +68,6 @@ cd ~/.kube
 cp config config.back
 KUBECONFIG=~/.kube/config:~/.kube/pvecluster.yaml kubectl config view --flatten > /tmp/config 
 mv /tmp/config config
+chmod go-rwx config
 cd -
 ```
