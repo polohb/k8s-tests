@@ -12,4 +12,6 @@ How to deploy a k8s cluster on the vm created previously.
 
 ## whoami-quick-test
 
-Yaml files to quickly test the k8s cluster by deployging deploymet, service and ingress.
+Simple yaml files to quickly test the k8s cluster by deployging pods, service and ingress.
+
+Also contains doc to test helm with _cowboysysop/whoami_ chart.
